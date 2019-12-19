@@ -8,8 +8,8 @@ fcb_tomcat::linux::instances:
     catalina_home: '/opt/tomcat-9'
     catalina_base: '/opt/tomcat-9/default-instance'
   first-instance:
-    install_dir: '/opt/tomcat-8-5'
+    catalina_home: '/opt/tomcat-8-5'
     catalina_base: '/opt/tomcat-8-5/second-instance'
   second-instance:
-    install_dir: '/opt/tomcat-9'
+    catalina_home: '/opt/tomcat-9'
     catalina_base: '/opt/tomcat-9/second-instance'
