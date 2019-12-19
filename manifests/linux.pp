@@ -8,8 +8,9 @@ class fcb_tomcat::linux(
     }
   }
 
-    #tomcat::instance { $instance:
-    #  catalina_home => $install_dir,
-    #  catalina_base => "${install_dir}/${instance}",
-    #}
+  $install_versions.each |$instance, $hash| {
+    tomcat::instance { $instance:
+      * => $hash,
+    }
+  }
 }
