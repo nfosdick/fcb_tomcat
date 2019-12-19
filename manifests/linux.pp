@@ -5,13 +5,16 @@ class fcb_tomcat::linux(
   #https://archive.apache.org/dist/tomcat/tomcat-8/v${tomcat_8_5_version}/bin/apache-tomcat-${tomcat_8_5_version}.tar.gz"
 ){
   $install.each |$instance, $values| {
-    tomcat::install { $values['install_dir']:
-      source_url => $values['install_url'],
+    $install_dir = $values['install_dir']
+    $install_url = $values['install_url']
+
+    tomcat::install { $install_dir:
+      source_url => $install_url
     }
 
     tomcat::instance { $instance':
-      catalina_home => $values['install_dir'],
-      catalina_base => $values['install_dir'],
+      catalina_home => $install_dir,
+      catalina_base => "${install_dir}/${instance}",
     }
   }
 }
