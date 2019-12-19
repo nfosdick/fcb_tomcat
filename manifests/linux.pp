@@ -5,12 +5,12 @@ class fcb_tomcat::linux(
   #https://archive.apache.org/dist/tomcat/tomcat-8/v${tomcat_8_5_version}/bin/apache-tomcat-${tomcat_8_5_version}.tar.gz"
 ){
   notify{"Blah $install":}
-  #$hash.each |$key, $values| {
-  #  notify{"Nick $values['install_dir'] and $values['install_url]":}
+  $install.each |$key, $values| {
+    notify{"Nick $values['install_dir'] and $values['install_url]":}
     #tomcat::install { $values['install_dir']:
     #  source_url => $values['install_url],
     #}
-  #}
+  }
     #tomcat::install { $install_dir:
     #  source_url => $install_url,
     #}
