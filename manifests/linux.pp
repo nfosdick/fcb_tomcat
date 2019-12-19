@@ -9,10 +9,10 @@ class fcb_tomcat::linux(
     $install_url = $values['install_url']
 
     tomcat::install { $install_dir:
-      source_url => $install_url
+      source_url => $install_url,
     }
 
-    tomcat::instance { $instance':
+    tomcat::instance { $instance:
       catalina_home => $install_dir,
       catalina_base => "${install_dir}/${instance}",
     }
