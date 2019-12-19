@@ -6,10 +6,10 @@ class fcb_tomcat::linux(
 ){
 #  notify{"Blah $install":}
   $install.each |$key, $values| {
-    notify{"Nick $values['install_dir'] and $values['install_url]":}
-    #tomcat::install { $values['install_dir']:
-    #  source_url => $values['install_url],
-    #}
+    #notify{"Nick $values['install_dir'] and $values['install_url]":}
+    tomcat::install { $values['install_dir']:
+      source_url => $values['install_url],
+    }
   }
     #tomcat::install { $install_dir:
     #  source_url => $install_url,
