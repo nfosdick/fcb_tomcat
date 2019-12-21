@@ -18,4 +18,4 @@ fcb_tomcat::linux::instances:
 fcb_tomcat::linux::configs:
     default-instance:
       catalina_base: '/opt/tomcat-9'
-      port: '8119'
+      port: '8116'
