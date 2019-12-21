@@ -31,6 +31,6 @@ fcb_tomcat::linux::connectors:
         sslProtocol: 'TLS'
     ajp-connector:
       port: '8109'
-      protocol: 'AJP/1.3',
+      protocol: 'AJP/1.3'
       additional_attributes:
         redirectPort: '8543'
