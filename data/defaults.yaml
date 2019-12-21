@@ -16,5 +16,12 @@ fcb_tomcat::linux::instances:
 #    catalina_base: '/opt/tomcat-9/second-instance'
 
 fcb_tomcat::linux::configs:
-    default-instance:
-      port: '8116'
+  default-instance:
+    port: '8116'
+
+fcb_tomcat::linux::connectors:
+  default-instance:
+    port: '8081'
+    protocol: 'HTTP/1.1'
+    additional_attributes:
+      redirectPort: '8443'

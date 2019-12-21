@@ -2,6 +2,7 @@ class fcb_tomcat::linux(
   $install_versions = {},
   $instances        = {}, 
   $configs          = {},
+  $connectors       = {},
 ){
   $install_versions.each |$install_dir, $hash| {
     tomcat::install { $install_dir:
@@ -23,12 +24,10 @@ class fcb_tomcat::linux(
     }
   }
 
-#tomcat::config::server::connector { 'tomcat9-second-http':
-#  catalina_base         => '/opt/tomcat9/second',
-#  port                  => '8081',
-#  protocol              => 'HTTP/1.1',
-#  additional_attributes => {
-#    'redirectPort' => '8443'
-#  },
-#}
+  connectors.each |$instance, $hash| {
+    $catalina_base = $instances[$instance]['catalina_base']
+    tomcat::config::server::connector { 'tomcat9-second-http':
+      catalina_base => $catalina_base,
+      *             => $hash,
+    }
 }
