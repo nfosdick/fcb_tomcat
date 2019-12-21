@@ -14,7 +14,7 @@ class fcb_tomcat::linux(
     }
   }
 
-  $instances.each |$instance, $hash| {
+  $configs.each |$instance, $hash| {
     tomcat::config::server { $instance:
       * => $hash 
     }
