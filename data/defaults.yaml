@@ -1,4 +1,4 @@
-fcb_tomcat::linux::connectors:
+fcb_tomcat::linux::defaults_connectors:
   default-instance:
     http-connector:
       port: '8080'
