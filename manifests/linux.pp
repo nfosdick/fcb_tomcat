@@ -25,10 +25,11 @@ class fcb_tomcat::linux(
   }
 
   connectors.each |$instance, $hash| {
+    notify{"Nick $hash":}
     #$catalina_base = $instances[$instance]['catalina_base']
-    tomcat::config::server::connector { 'tomcat9-second-http':
+  #  tomcat::config::server::connector { 'tomcat9-second-http':
   #    catalina_base => $catalina_base,
-      *             => $hash,
-    }
+  #    *             => $hash,
+  #  }
   }
 }
