@@ -16,10 +16,10 @@ class fcb_tomcat::linux(
   }
 
   $configs.each |$instance, $hash| {
-    $instance_config = $instances[$instance]['catalina_base']
-    notify{"$instance_config":}
+    $catalina_base = $instances[$instance]['catalina_base']
     tomcat::config::server { $instance:
-      * => $hash 
+      catalina_base => $catalina_base,
+      *             => $hash,
     }
   }
 
