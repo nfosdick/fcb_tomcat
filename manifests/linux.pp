@@ -16,7 +16,7 @@ class fcb_tomcat::linux(
   }
 
   $configs.each |$instance, $hash| {
-    notify{"$instances[$instance]":}
+    notify{"$instances[$instance]['catalina_base']":}
     tomcat::config::server { $instance:
       * => $hash 
     }
