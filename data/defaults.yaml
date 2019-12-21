@@ -1,19 +1,19 @@
 fcb_tomcat::linux::install_versions:
   '/opt/tomcat-9':
     source_url: 'https://www.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz'
-  '/opt/tomcat-8-5':
-    source_url: 'https://www.apache.org/dist/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz'
+#  '/opt/tomcat-8-5':
+#    source_url: 'https://www.apache.org/dist/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz'
 
 fcb_tomcat::linux::instances:
   default-instance:
     catalina_home: '/opt/tomcat-9'
     catalina_base: '/opt/tomcat-9/default-instance'
-  first-instance:
-    catalina_home: '/opt/tomcat-8-5'
-    catalina_base: '/opt/tomcat-8-5/first-instance'
-  second-instance:
-    catalina_home: '/opt/tomcat-9'
-    catalina_base: '/opt/tomcat-9/second-instance'
+#  first-instance:
+#    catalina_home: '/opt/tomcat-8-5'
+#    catalina_base: '/opt/tomcat-8-5/first-instance'
+#  second-instance:
+#    catalina_home: '/opt/tomcat-9'
+#    catalina_base: '/opt/tomcat-9/second-instance'
 
 fcb_tomcat::linux::configs:
     default-instance:
