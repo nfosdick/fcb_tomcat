@@ -30,11 +30,11 @@ class fcb_tomcat::linux(
     $defaults = $defaults_connectors['defaults'] + $connector_hash
     notify{"Nick $defaults":}
     #$merged_connectors = $defaults_connectors['defaults'] + $connector_hash
-    $connector_hash.each |$connector, $hash| { 
-      tomcat::config::server::connector { "${instance}-${connector}":
-        catalina_base => $catalina_base,
-        *             => $hash,
-      }
-    }
+    #$connector_hash.each |$connector, $hash| { 
+    #  tomcat::config::server::connector { "${instance}-${connector}":
+    #    catalina_base => $catalina_base,
+    #    *             => $hash,
+    #  }
+    #}
   }
 }
