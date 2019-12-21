@@ -26,3 +26,7 @@ fcb_tomcat::linux::connectors:
       protocol: 'HTTP/1.1'
       additional_attributes:
         redirectPort: '8443'
+    https-connector:
+      port: '443'
+      additional_attributes:
+        sslProtocol: 'TLS'
