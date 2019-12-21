@@ -28,6 +28,7 @@ class fcb_tomcat::linux(
   $connectors.each |$instance, $connector_hash| {
     $catalina_base = $instances[$instance]['catalina_base']
     $defaults = $defaults_connectors + $connector_hash
+    notify{"Nick $defaults":}
     #$merged_connectors = $defaults_connectors['defaults'] + $connector_hash
     #$connector_hash.each |$connector, $hash| { 
     #  tomcat::config::server::connector { "${instance}-${connector}":
