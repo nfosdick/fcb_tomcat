@@ -1,10 +1,12 @@
 fcb_tomcat::linux::defaults_connectors:
   http-connector:
+    purge_connectors: true
     port: '8080'
     protocol: 'HTTP/1.1'
     additional_attributes:
       redirectPort: '8443'
   https-connector:
+    purge_connectors: true
     port: '8443'
     protocol: 'HTTP/1.1'
     additional_attributes:
