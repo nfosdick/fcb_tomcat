@@ -12,6 +12,12 @@ defaults:
 #      merge_hash_arrays: true
 
 hierarchy:
+  - name: "Merge Options"
+    paths:
+      - "merge.yaml"
+  - name: "Examples"
+    paths:
+      - "examples.yaml"
   - name: "The Default Setup for Tomcat"
     paths:
       - "defaults.yaml"

@@ -1,0 +1,5 @@
+lookup_options:
+  "^.*$":
+    merge:                          # Merge the values found across hierarchies, instead of getting the first one
+      strategy: deep                # Do a deep merge, useful when dealing with Hashes (to override single subkeys)
+      merge_hash_arrays: true
