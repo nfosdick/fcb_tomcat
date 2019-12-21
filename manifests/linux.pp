@@ -1,6 +1,7 @@
 class fcb_tomcat::linux(
-  $install_versions,
-  $instances, 
+  $install_versions = {},
+  $instances        = {}, 
+  $configs          = {},
 ){
   $install_versions.each |$install_dir, $hash| {
     tomcat::install { $install_dir:
