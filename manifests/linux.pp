@@ -30,4 +30,5 @@ class fcb_tomcat::linux(
       catalina_base => $catalina_base,
       *             => $hash,
     }
+  }
 }
