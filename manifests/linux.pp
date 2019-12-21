@@ -28,11 +28,11 @@ class fcb_tomcat::linux(
   $connectors.each |$instance, $connector_hash| {
     $catalina_base = $instances[$instance]['catalina_base']
     $connector_hash.each |$connector, $hash| { 
-      if( $defaults_connectors[$connector] == undef ) {
-        $merged_connectors = $hash
+      if( has_key($defaults_connectors, $connector) ) {
+        $merged_connectors = $defaults_connectors[$connector] + $hash
       }
       else {
-        $merged_connectors = $defaults_connectors[$connector] + $hash
+        $merged_connectors = $hash
       }
 
       tomcat::config::server::connector { "${instance}-${connector}":
