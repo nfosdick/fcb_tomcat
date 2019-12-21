@@ -10,12 +10,12 @@ fcb_tomcat::linux::instances:
     catalina_base: '/opt/tomcat-9/default-instance'
   first-instance:
     catalina_home: '/opt/tomcat-8-5'
-    catalina_base: '/opt/tomcat-8-5/second-instance'
+    catalina_base: '/opt/tomcat-8-5/first-instance'
   second-instance:
     catalina_home: '/opt/tomcat-9'
     catalina_base: '/opt/tomcat-9/second-instance'
 
 fcb_tomcat::linux::configs:
     default-instance:
-      catalina_base: '/opt/tomcat-9'
+      catalina_base: '/opt/tomcat-9/default-instance'
       port: '8116'
