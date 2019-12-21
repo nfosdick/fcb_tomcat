@@ -1,5 +1,5 @@
 fcb_tomcat::linux::defaults_connectors:
-  default-instance:
+  defaults:
     http-connector:
       port: '8080'
       protocol: 'HTTP/1.1'
