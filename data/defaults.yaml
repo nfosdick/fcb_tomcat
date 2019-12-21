@@ -8,4 +8,4 @@ fcb_tomcat::linux::defaults_connectors:
     port: '8443'
     protocol: 'HTTP/1.1'
     additional_attributes:
-      sslProtocol: 'TLS'
+      sslProtocol: 'TLSv1'
