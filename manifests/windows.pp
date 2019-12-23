@@ -7,7 +7,7 @@ class fcb_tomcat::windows(
   $download_url     = "${download_uri}/${zip_file}",
 ){
 
-  dsc_xremotefile {"Download $url":
+  dsc_xremotefile {"Download $download_url":
     dsc_destinationpath => "${destination_path}/${zip_file}",
     dsc_uri             => $download_url,
   }
