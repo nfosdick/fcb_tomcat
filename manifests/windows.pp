@@ -3,7 +3,7 @@ class fcb_tomcat::windows(
   $version          = '9.0.30',
   $architecture     = $facts['architecture'],
   $zip_file         = "apache-tomcat-${version}-windows-${architecture}.zip",
-  $download_uri     = "https://www-eu.apache.org/dist/tomcat/tomcat-9/v${version}/bin",
+  $download_uri     = "http://www-eu.apache.org/dist/tomcat/tomcat-9/v${version}/bin",
   $download_url     = "${download_uri}/${zip_file}",
 ){
 
