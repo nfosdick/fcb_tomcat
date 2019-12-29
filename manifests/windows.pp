@@ -40,5 +40,5 @@ class fcb_tomcat::windows(
 #    dsc_name  => "${service_name} tomcat-${version}",
 #    dsc_state => 'running',
 #    require   => Exec[ "Install tomcat-${version} Windows Service" ],
-  }  
+#  }  
 }
