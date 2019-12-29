@@ -6,6 +6,7 @@ class fcb_tomcat::windows(
   $zip_file         = "apache-tomcat-${version}-windows-${architecture}.zip",
   $download_uri     = "http://www-eu.apache.org/dist/tomcat/tomcat-9/v${version}/bin",
   $download_url     = "${download_uri}/${zip_file}",
+  $service_name     = 'Apache Tomcat 9.0',
 ){
   $zip_file_path = "${destination_path}/${zip_file}"
   $service_cmd   = "${install_dir}/${version}/service.bat"
@@ -35,14 +36,7 @@ class fcb_tomcat::windows(
   }
 
   dsc_service{"tomcat-${version}":
-    dsc_name  => "Apache Tomcat 9.0 tomcat-9.3.0",
+    dsc_name  => "${service_name} "tomcat-${version}"",
     dsc_state => 'running',
   }  
-
-  #exec { "Start tomcat-${version} Windows Service":
-  #  command  => "Start-Service -Name tomcat-${version}",
-  #  unless   => "if((Get-Service tomcat-${version}).Status -eq 'Running'){ exit 0 }else{ exit 1 }",
-  #  provider => powershell,
-  #  require  => Exec[ "Install tomcat-${version} Windows Service" ],
-  #} 
 }
