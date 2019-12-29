@@ -35,7 +35,8 @@ class fcb_tomcat::windows(
   }
 
   dsc_service{"tomcat-${version}":
-    dsc_state  => 'running'
+    dsc_name  => "tomcat-${version}",
+    dsc_state => 'running',
   }  
 
   #exec { "Start tomcat-${version} Windows Service":
