@@ -1,3 +1,4 @@
+# Linux Defaults
 fcb_tomcat::linux::defaults_connectors:
   http-connector:
 #    purge_connectors: true
@@ -11,3 +12,9 @@ fcb_tomcat::linux::defaults_connectors:
     protocol: 'HTTP/1.1'
     additional_attributes:
       sslProtocol: 'TLSv1'
+
+# Windows Defaults
+fcb_tomcat::windows::destination_path: 'c:/larktemp'
+fcb_tomcat::windows::install_dir: 'c:/tomcat'
+fcb_tomcat::windows::version: '9.0.30'
+fcb_tomcat::windows::service_name: 'Apache Tomcat 9.0'
