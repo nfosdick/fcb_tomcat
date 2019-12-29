@@ -9,7 +9,7 @@ class fcb_tomcat::windows(
   $service_name     = 'Apache Tomcat 9.0',
 ){
   $zip_file_path = "${destination_path}/${zip_file}"
-  $service_cmd   = "${install_dir}/${version}/service.bat"
+  $service_cmd   = "${install_dir}/${version}/bin/service.bat"
 
   dsc_xremotefile {"Download $download_url":
     dsc_destinationpath => $zip_file_path,
