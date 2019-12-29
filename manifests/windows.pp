@@ -8,6 +8,7 @@ class fcb_tomcat::windows(
   $download_url     = "${download_uri}/${zip_file}",
 ){
   $zip_file_path = "${destination_path}/${zip_file}"
+  $service_cmd   = "${install_dir}/${version}/service.bat"
 
   dsc_xremotefile {"Download $download_url":
     dsc_destinationpath => $zip_file_path,
@@ -25,4 +26,12 @@ class fcb_tomcat::windows(
     dsc_path        => $zip_file_path,
     dsc_destination => $install_dir,
   }
+
+  exec { "Install jdk-${install_version}-windows-${architecture}.exe":
+    command  => "$service_cmd install tomcat-${version}"
+    unless   => "if(Get-Command tomcat-${version}",
+    provider => powershell,
+    require  => Dsc_archive[ "Unzip $zip_file" ],
+  }  
+
 }
