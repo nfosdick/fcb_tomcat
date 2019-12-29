@@ -27,12 +27,17 @@ class fcb_tomcat::windows(
     dsc_destination => $install_dir,
   }
 
-  exec { "Install jdk-${install_version}-windows-${architecture}.exe":
+  exec { "Install tomcat-${version} Windows Service":
     command  => "$service_cmd install tomcat-${version}",
     unless   => "Get-Command tomcat-${version}",
-    #unless   => "if(Get-Command tomcat-${version}){ exit 0 }else{ exit 1 }",
     provider => powershell,
     require  => Dsc_archive[ "Unzip $zip_file" ],
   }  
 
+  exec { "Start tomcat-${version} Windows Service":
+    command  => "Start-Service -Name tomcat-${version}"
+    unless   => "(Get-Service tomcat-${version}).Status -eq 'Running'"
+    provider => powershell,
+    require  => Exec[ "Install tomcat-${version} Windows Service" ],
+  } 
 }
