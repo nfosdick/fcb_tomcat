@@ -7,14 +7,6 @@ class fcb_tomcat::windows(
   $zip_file         = "apache-tomcat-${version}-windows-${architecture}.zip",
   $download_uri     = "http://www-eu.apache.org/dist/tomcat/tomcat-9/v${version}/bin",
   $download_url     = "${download_uri}/${zip_file}",
-#  $destination_path = 'c:/larktemp',
-#  $install_dir      = 'c:/tomcat',
-#  $version          = '9.0.30',
-#  $architecture     = $facts['architecture'],
-#  $zip_file         = "apache-tomcat-${version}-windows-${architecture}.zip",
-#  $download_uri     = "http://www-eu.apache.org/dist/tomcat/tomcat-9/v${version}/bin",
-#  $download_url     = "${download_uri}/${zip_file}",
-#  $service_name     = 'Apache Tomcat 9.0',
 ){
   $zip_file_path = "${destination_path}/${zip_file}"
   $service_cmd   = "${install_dir}/apache-tomcat-${version}/bin/service.bat"
