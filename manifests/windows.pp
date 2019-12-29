@@ -28,8 +28,9 @@ class fcb_tomcat::windows(
   }
 
   exec { "Install jdk-${install_version}-windows-${architecture}.exe":
-    command  => "$service_cmd install tomcat-${version}"
+    command  => "$service_cmd install tomcat-${version}",
     unless   => "Get-Command tomcat-${version}",
+    #unless   => "if(Get-Command tomcat-${version}){ exit 0 }else{ exit 1 }",
     provider => powershell,
     require  => Dsc_archive[ "Unzip $zip_file" ],
   }  
