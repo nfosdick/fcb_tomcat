@@ -35,7 +35,7 @@ class fcb_tomcat::windows(
   }
 
   dsc_service{"tomcat-${version}":
-    dsc_name  => "Apache Tomcat 9.0 tomcat-9.3.0"
+    dsc_name  => "Apache Tomcat 9.0 tomcat-9.3.0",
     dsc_state => 'running',
   }  
 
