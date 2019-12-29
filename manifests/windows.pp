@@ -35,8 +35,8 @@ class fcb_tomcat::windows(
   }  
 
   exec { "Start tomcat-${version} Windows Service":
-    command  => "Start-Service -Name tomcat-${version}"
-    unless   => "(Get-Service tomcat-${version}).Status -eq 'Running'"
+    command  => "Start-Service -Name tomcat-${version}",
+    unless   => "(Get-Service tomcat-${version}).Status -eq 'Running'",
     provider => powershell,
     require  => Exec[ "Install tomcat-${version} Windows Service" ],
   } 
