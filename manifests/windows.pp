@@ -31,7 +31,8 @@ class fcb_tomcat::windows(
 #  unless   => "if(Get-Command java | Select-Object Version|Select-String ${java_version}){ exit 0 }else{ exit 1 }",
   exec { "Install tomcat-${version} Windows Service":
     command   => "$service_cmd install tomcat-${version}",
-    unless    => "if(Get-Command tomcat-${version}){ exit 0 }else{ exit 1 }",
+    #unless    => "if(Get-Command tomcat-${version}){ exit 0 }else{ exit 1 }",
+    onlyif    => "Get-Command tomcat-${version}",
     provider  => powershell,
     #logoutput => true,
     require   => Dsc_archive[ "Unzip $zip_file" ],
