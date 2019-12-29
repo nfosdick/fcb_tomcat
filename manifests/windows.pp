@@ -29,10 +29,11 @@ class fcb_tomcat::windows(
   }
 
   exec { "Install tomcat-${version} Windows Service":
-    command  => "$service_cmd install tomcat-${version}",
-    onlyif   => "Get-Command tomcat-${version}",
-    provider => powershell,
-    require  => Dsc_archive[ "Unzip $zip_file" ],
+    command   => "$service_cmd install tomcat-${version}",
+    onlyif    => "Get-Command tomcat-${version}",
+    provider  => powershell,
+    logoutput => true,
+    require   => Dsc_archive[ "Unzip $zip_file" ],
   }
 
   dsc_service{"tomcat-${version}":
