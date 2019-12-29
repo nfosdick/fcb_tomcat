@@ -32,12 +32,16 @@ class fcb_tomcat::windows(
     unless   => "Get-Command tomcat-${version}",
     provider => powershell,
     require  => Dsc_archive[ "Unzip $zip_file" ],
+  }
+
+  dsc_service{"tomcat-${version}":
+    dsc_state  => 'running'
   }  
 
-  exec { "Start tomcat-${version} Windows Service":
-    command  => "Start-Service -Name tomcat-${version}",
-    unless   => "if((Get-Service tomcat-${version}).Status -eq 'Running'){ exit 0 }else{ exit 1 }",
-    provider => powershell,
-    require  => Exec[ "Install tomcat-${version} Windows Service" ],
-  } 
+  #exec { "Start tomcat-${version} Windows Service":
+  #  command  => "Start-Service -Name tomcat-${version}",
+  #  unless   => "if((Get-Service tomcat-${version}).Status -eq 'Running'){ exit 0 }else{ exit 1 }",
+  #  provider => powershell,
+  #  require  => Exec[ "Install tomcat-${version} Windows Service" ],
+  #} 
 }
