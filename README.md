@@ -9,6 +9,7 @@
 1. [Hiera](#hiera)
    - [Linux](#Linux)
    - [Windows](#Windows)
+   - [Merge](#Merge)
 
 ## Overview
 
@@ -130,7 +131,7 @@ fcb_tomcat::windows::install_dir: 'c:/tomcat'
 fcb_tomcat::windows::version: '9.0.30'
 fcb_tomcat::windows::service_name: 'Apache Tomcat 9.0'
 ```
-### Merge Hiera
+### Merge
 This yaml file is used to set the merge stategy for the hiera data for the module.  It is a deep merge strategy to allow the use of the default yaml files for common setting.
 ```
 lookup_options:
