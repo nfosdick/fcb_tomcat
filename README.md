@@ -7,7 +7,7 @@
 1. [Setup](#setup)
 1. [Usage](#usage)
 1. [Hiera](#hiera)
-   2. [Linux](#Linux)
+  1. [Linux](#Linux)
 
 ## Overview
 
