@@ -56,7 +56,7 @@ The module hierarchy (hiera.yaml) is primarily used for setting defaults.
     paths:
       - "defaults.yaml"
 ```
-### Linux Hiera Examples
+### Linux Settings Set in defaults Hiera
 ```
 fcb_tomcat::linux::install_versions:
   '/opt/tomcat-9':
@@ -109,10 +109,19 @@ fcb_tomcat::linux::connectors:
       additional_attributes:
         redirectPort: '8543'
 ```
-### Windows Hiera Examples
+### Windows Settings Set in defaults Hiera
 ```
 fcb_tomcat::windows::destination_path: 'c:/larktemp'
 fcb_tomcat::windows::install_dir: 'c:/tomcat'
 fcb_tomcat::windows::version: '9.0.30'
 fcb_tomcat::windows::service_name: 'Apache Tomcat 9.0'
+```
+### Merge Hiera
+This yaml file is used to set the merge stategy for the hiera data for the module.  It is a deep merge strategy to allow the use of the default yaml files for common setting.
+```
+lookup_options:
+  "fcb_tomcat::.*":
+    merge:                          # Merge the values found across hierarchies, instead of getting the first one
+      strategy: deep                # Do a deep merge, useful when dealing with Hashes (to override single subkeys)
+      merge_hash_arrays: true
 ```
