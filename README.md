@@ -107,14 +107,14 @@ fcb_tomcat::linux::instances:
     catalina_home: '/opt/tomcat-9'
     catalina_base: '/opt/tomcat-9/second-instance'
 ```
-#### Tomcat Default Config
+#### Server Config
 This will set a default values for the tomcat instances.  This config was set to avoid repetitive configs, for example, a common port or catalina_base.
 ```
 fcb_tomcat::linux::configs:
   default-instance:
     port: '8116'
 ```
-#### Tomcat Connector Defaults
+#### Connector Defaults
 This will set a default values for connectors for tomcat instances.  This config was set to avoid repetitive configs for connectors.  
 ```
 fcb_tomcat::linux::connectors:
