@@ -57,13 +57,18 @@ The module hierarchy (hiera.yaml) is primarily used for setting defaults.
       - "defaults.yaml"
 ```
 ### Linux Settings Set in defaults Hiera
+#### Tomcat Base Version Linux Hiera Settings
+Multiple version of tomcat can be installed on the same node with the below syntax.
 ```
 fcb_tomcat::linux::install_versions:
   '/opt/tomcat-9':
     source_url: 'https://www.apache.org/dist/tomcat/tomcat-9/v9.0.30/bin/apache-tomcat-9.0.30.tar.gz'
   '/opt/tomcat-8-5':
     source_url: 'https://www.apache.org/dist/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz'
-
+```
+#### Tomcat Connectors Default Hiera Settings
+This is how you can define the default connector configuration.  The value are deep merged with any overrides defined in hiera.  The primary purpose of default connector settings is to avoid duplicate configuration at any hiera level.  
+```
 fcb_tomcat::linux::defaults_connectors:
   http-connector:
     purge_connectors: false
@@ -77,7 +82,10 @@ fcb_tomcat::linux::defaults_connectors:
     protocol: 'HTTP/1.1'
     additional_attributes:
       sslProtocol: 'TLSv1'
-
+```
+#### Tomcat Instance Creation 
+This is how you can define one more more instances of Tomcat in hiera.  
+```
 fcb_tomcat::linux::instances:
   default-instance:
     catalina_home: '/opt/tomcat-9'
@@ -88,11 +96,15 @@ fcb_tomcat::linux::instances:
   second-instance:
     catalina_home: '/opt/tomcat-9'
     catalina_base: '/opt/tomcat-9/second-instance'
+```
 
+```
 fcb_tomcat::linux::configs:
   default-instance:
     port: '8116'
+```
 
+```
 fcb_tomcat::linux::connectors:
   default-instance:
     http-connector:
