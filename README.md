@@ -7,7 +7,7 @@
 1. [Setup](#setup)
 1. [Usage](#usage)
 1. [Hiera](#hiera)
-  * [Linux Settings Set in defaults Hiera](#Linux Settings Set in defaults Hiera)
+  * [Linux](#Linux)
 
 ## Overview
 
@@ -57,7 +57,7 @@ The module hierarchy (hiera.yaml) is primarily used for setting defaults.
     paths:
       - "defaults.yaml"
 ```
-### Linux Settings Set in defaults Hiera
+### Linux
 #### Tomcat Base Version Linux Hiera Settings
 Multiple version of tomcat can be installed on the same node with the below syntax.
 ```
