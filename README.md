@@ -7,7 +7,7 @@
 1. [Setup](#setup)
 1. [Usage](#usage)
 1. [Hiera](#hiera)
-	1. [Linux Settings Set in defaults Hiera](###Linux Settings Set in defaults Hiera)
+	1. [Linux Settings Set in defaults Hiera](#Linux Settings Set in defaults Hiera)
 
 ## Overview
 
