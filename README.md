@@ -6,6 +6,8 @@
 1. [Module Description](#module-description)
 1. [Setup](#setup)
 1. [Usage](#usage)
+   - [Manifest](#Manifest)
+   - [Apply](#Apply)
 1. [Hiera](#hiera)
    - [Linux](#Linux)
    - [Windows](#Windows)
@@ -39,10 +41,15 @@ puppet module install puppetlabs-concat --version 6.2.0
 puppet module install puppet-archive --version 4.5.0
 ```
 ## Usage
+### Manifest
 ```
 node default {
   include fcb_tomcat
 }
+```
+### Apply
+```
+puppet apply -e 'include fcb_tomcat'
 ```
 
 ## Hiera
