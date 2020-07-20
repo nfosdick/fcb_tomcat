@@ -15,7 +15,7 @@
 
 ## Overview
 
-This module installs tomcat on Windows or Linux platforms.  The init.pp makes use of OS.Name fact to simplify implementation and determine the proper way to install Java.
+This module installs tomcat on Windows or Linux platforms.  The init.pp makes use of OS.Name fact to simplify implementation and determine the proper way to install Java.  The primary purpose of this wrapper module is abstract the complexity of installing tomcat on windows or linux.  The secondary purpose is to avoid making any manual updates to the linux forge module.  Thise helps ensure long term supportability and upgrade ability of the forge module.  
 
 ## Module Description
 
@@ -67,7 +67,7 @@ The module hierarchy (hiera.yaml) is primarily used for setting defaults.
       - "defaults.yaml"
 ```
 ### Linux
-#### Tomcat Base Version Linux Hiera Settings
+#### Base Version Install
 Multiple version of tomcat can be installed on the same node with the below syntax.
 ```
 fcb_tomcat::linux::install_versions:
@@ -76,7 +76,7 @@ fcb_tomcat::linux::install_versions:
   '/opt/tomcat-8-5':
     source_url: 'https://www.apache.org/dist/tomcat/tomcat-8/v8.5.50/bin/apache-tomcat-8.5.50.tar.gz'
 ```
-#### Tomcat Connectors Default Hiera Settings
+#### Connector Defaults
 This is how you can define the default connector configuration.  The value are deep merged with any overrides defined in hiera.  The primary purpose of default connector settings is to avoid duplicate configuration at any hiera level.  
 ```
 fcb_tomcat::linux::defaults_connectors:
@@ -93,7 +93,7 @@ fcb_tomcat::linux::defaults_connectors:
     additional_attributes:
       sslProtocol: 'TLSv1'
 ```
-#### Tomcat Instance Creation 
+#### Instance Creation
 This is how you can define one more more instances of Tomcat in hiera.  
 ```
 fcb_tomcat::linux::instances:
