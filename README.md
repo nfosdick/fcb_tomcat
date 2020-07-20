@@ -8,6 +8,7 @@
 1. [Usage](#usage)
 1. [Hiera](#hiera)
    - [Linux](#Linux)
+   - [Windows](#Windows)
 
 ## Overview
 
@@ -122,7 +123,7 @@ fcb_tomcat::linux::connectors:
       additional_attributes:
         redirectPort: '8543'
 ```
-### Windows Settings Set in defaults Hiera
+### Windows
 ```
 fcb_tomcat::windows::destination_path: 'c:/larktemp'
 fcb_tomcat::windows::install_dir: 'c:/tomcat'
