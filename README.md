@@ -15,7 +15,7 @@
 
 ## Overview
 
-This module installs tomcat on Windows or Linux platforms.  The init.pp makes use of OS.Name fact to simplify implementation and determine the proper way to install Java.  The primary purpose of this wrapper module is abstract the complexity of installing tomcat on windows or linux.  The secondary purpose is to avoid making any manual updates to the linux forge module.  Thise helps ensure long term supportability and upgrade ability of the forge module.  
+This module installs tomcat on Windows or Linux platforms.  The init.pp makes use of OS.Name fact to simplify implementation and determine the proper way to install Java.  The primary purpose of this wrapper module is abstract the complexity of installing tomcat on windows or linux.  The secondary purpose is to avoid making any manual updates to the linux forge module.  This helps ensure long term supportability and upgrade ability of the forge module.  
 
 ## Module Description
 
