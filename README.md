@@ -39,6 +39,7 @@ puppet module install puppetlabs-stdlib --version 6.3.0
 puppet module install puppetlabs-java --version 6.3.0
 puppet module install puppetlabs-concat --version 6.2.0
 puppet module install puppet-archive --version 4.5.0
+puppet module install puppetlabs-dsc --version 1.9.3
 ```
 ## Usage
 ### Manifest
