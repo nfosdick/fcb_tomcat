@@ -36,7 +36,7 @@ class fcb_tomcat::windows(
     require   => Dsc_archive[ "Unzip $zip_file" ],
   }
 
-  dsc_service{"tomcat-${version}":
+  dsc_service{ "${service_name} tomcat-${version}":
     #dsc_name  => "${service_name} tomcat-${version}",
     dsc_name  => "Apache Tomcat 9.0 tomcat-9.0.37",
     dsc_state => 'running',
