@@ -16,5 +16,5 @@ fcb_tomcat::linux::defaults_connectors:
 # Windows Defaults
 fcb_tomcat::windows::destination_path: 'c:/larktemp'
 fcb_tomcat::windows::install_dir: 'c:/tomcat'
-fcb_tomcat::windows::version: '9.0.30'
+fcb_tomcat::windows::version: '9.0.37'
 fcb_tomcat::windows::service_name: 'Apache Tomcat 9.0'
