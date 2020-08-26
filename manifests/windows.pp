@@ -37,8 +37,8 @@ class fcb_tomcat::windows(
   }
 
   dsc_service{ "${service_name} tomcat-${version}":
-    #dsc_name  => "${service_name} tomcat-${version}",
-    dsc_name  => "Apache Tomcat 9.0 tomcat-9.0.37",
+    dsc_name  => "${service_name} tomcat-${version}",
+    #dsc_name  => "Apache Tomcat 9.0 tomcat-9.0.37",
     dsc_state => 'running',
     require   => Exec[ "Install tomcat-${version} Windows Service" ],
   }  
