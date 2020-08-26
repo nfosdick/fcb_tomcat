@@ -36,9 +36,9 @@ class fcb_tomcat::windows(
     require   => Dsc_archive[ "Unzip $zip_file" ],
   }
 
-  dsc_service{"tomcat-${version}":
-    dsc_name  => "${service_name} tomcat-${version}",
-    dsc_state => 'running',
-    require   => Exec[ "Install tomcat-${version} Windows Service" ],
-  }  
+#  dsc_service{"tomcat-${version}":
+#    dsc_name  => "${service_name} tomcat-${version}",
+#    dsc_state => 'running',
+#    require   => Exec[ "Install tomcat-${version} Windows Service" ],
+#  }  
 }
