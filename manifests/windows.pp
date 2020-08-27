@@ -36,7 +36,7 @@ class fcb_tomcat::windows(
     unless    => "if(Get-Service tomcat-${version}){ exit 0 }else{ exit 1 }",
     provider  => powershell,
     logoutput => true,
-    cwd       => "${base_path/bin",
+    cwd       => "${base_path/bin}",
     require   => Dsc_archive[ "Unzip $zip_file" ],
   }
 
