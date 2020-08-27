@@ -8,6 +8,8 @@ class fcb_tomcat::windows(
   $download_uri     = "http://www-eu.apache.org/dist/tomcat/tomcat-9/v${version}/bin",
   $download_url     = "${download_uri}/${zip_file}",
 ){
+  include fcb_tomcat::windows::config
+
   $zip_file_path = "${destination_path}/${zip_file}"
   $base_path     = "${install_dir}/apache-tomcat-${version}"
   $service_cmd   = "${base_path}/bin/service.bat"
