@@ -11,6 +11,12 @@ class fcb_tomcat::windows::config{
     order   => '01',
   }
 
+  concat::fragment { 'TLS server.xml':
+    target  => "${base_path}/conf/server.xml",
+    content => template("${module_name}/ssl_server_xml.erb"),
+    order   => '50',
+  }
+
   concat::fragment { 'End server.xml':
     target  => "${base_path}/conf/server.xml",
     content => template("${module_name}/end_server_xml.erb"),
