@@ -10,6 +10,6 @@
       clientAuth="false" 
       sslProtocol="TLSv1.2"/>
 
-<% @ssl_config.each do |key, value| %>
+<% @ssl_config.each do |key, value| -%>
  <%= key %>="<%= value %>"
 <% end %>
