@@ -1,5 +1,8 @@
 class fcb_tomcat::windows::config{
-  $base_path = $::fcb_tomcat::windows::base_path
+  $ssl_config = $fcb_tomcat::windows::ssl_config
+  $base_path  = $fcb_tomcat::windows::base_path
+
+  notify{"Nick $ssl_config":}
 
   concat { "${base_path}/conf/server.xml":
     ensure => present,
