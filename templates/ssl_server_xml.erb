@@ -1,15 +1,4 @@
     <Connector
-      protocol="org.apache.coyote.http11.Http11NioProtocol"
-      port="8443"
-      maxThreads="200"
-      scheme="https"
-      secure="true" 
-      SSLEnabled="true"
-      keystoreFile="/Users/azure/.keystore" 
-      keystorePass="tomcat"
-      clientAuth="false" 
-      sslProtocol="TLSv1.2"/>
-    <Connector
 <% @ssl_config.each do |key, value| -%>
       <%= key %>="<%= value %>"
 <% end %>

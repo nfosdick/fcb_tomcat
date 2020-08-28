@@ -19,6 +19,7 @@ fcb_tomcat::windows::install_dir: 'c:/tomcat'
 fcb_tomcat::windows::version: '9.0.37'
 fcb_tomcat::windows::service_name: 'Apache Tomcat 9.0'
 fcb_tomcat::windows::ssl_config:
+  protocol: 'org.apache.coyote.http11.Http11NioProtocol'
   port: '8443'
   maxThreads: '200'
   scheme: 'https'
