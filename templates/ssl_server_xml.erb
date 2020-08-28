@@ -9,7 +9,7 @@
       keystorePass="tomcat"
       clientAuth="false" 
       sslProtocol="TLSv1.2"/>
-
+    <Connector
 <% @ssl_config.each do |key, value| -%>
- <%= key %>="<%= value %>"
+      <%= key %>="<%= value %>"
 <% end %>
