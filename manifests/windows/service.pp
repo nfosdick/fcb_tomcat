@@ -1,7 +1,5 @@
 class fcb_tomcat::windows::service
 {
-  require fcb_tomcat::windows::config
-
   $service_name = $fcb_tomcat::windows::service_name
   $version      = $fcb_tomcat::windows::service_name
 

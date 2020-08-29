@@ -14,7 +14,9 @@ class fcb_tomcat::windows(
   $service_cmd   = "${base_path}/bin/service.bat"
 
   include fcb_tomcat::windows::config
-  include fcb_tomcat::windows::service
+  class{ 'fcb_tomcat::windows::service':
+    require => Class[ 'fcb_tomcat::windows::config' ]
+  }
 
   dsc_xremotefile {"Download $download_url":
     dsc_destinationpath => $zip_file_path,
