@@ -14,6 +14,7 @@ class fcb_tomcat::windows(
   $service_cmd   = "${base_path}/bin/service.bat"
 
   include fcb_tomcat::windows::config
+  include fcb_tomcat::windows::service
 
   dsc_xremotefile {"Download $download_url":
     dsc_destinationpath => $zip_file_path,
@@ -40,11 +41,4 @@ class fcb_tomcat::windows(
     cwd       => "${base_path}/bin",
     require   => Dsc_archive[ "Unzip $zip_file" ],
   }
-
-  dsc_service{ "${service_name} tomcat-${version}":
-    dsc_name  => "${service_name} tomcat-${version}",
-    #dsc_name  => "Apache Tomcat 9.0 tomcat-9.0.37",
-    dsc_state => 'running',
-    require   => Exec[ "Install tomcat-${version} Windows Service" ],
-  }  
 }
