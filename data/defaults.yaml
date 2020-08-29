@@ -19,14 +19,17 @@ fcb_tomcat::windows::install_dir: 'c:/tomcat'
 fcb_tomcat::windows::version: '9.0.37'
 fcb_tomcat::windows::service_name: 'Apache Tomcat 9.0'
 fcb_tomcat::windows::ssl_config:
-  protocol: 'org.apache.coyote.http11.Http11NioProtocol'
+  protocol: 'org.apache.coyote.http11.Http11AprProtocol'
+  SSLCertificateFile="server.crt"
+  SSLCertificateKeyFile="server.key"
+  #protocol: 'org.apache.coyote.http11.Http11NioProtocol'
+  #keystoreFile: '/Users/azure/.keystore'
+  #keystorePass: 'tomcat'
   port: '8443'
   maxThreads: '200'
   scheme: 'https'
   secure: 'true'
   SSLEnabled: 'true'
-  keystoreFile: '/Users/azure/.keystore'
-  keystorePass: 'tomcat'
   clientAuth: 'false'
   sslProtocol: 'TLSv1.2'
   ciphers: |
