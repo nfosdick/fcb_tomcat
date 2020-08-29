@@ -24,6 +24,11 @@ class fcb_tomcat::windows::install
     before => Dsc_archive[ "Unzip $zip_file" ],
   }
 
+  file { "${install_dir}/ssl":
+    ensure => directory,
+    before => File[ $install_dir ],
+  }
+
   dsc_archive {"Unzip $zip_file":
     dsc_ensure      => 'present',
     dsc_path        => $zip_file_path,
