@@ -22,6 +22,7 @@ fcb_tomcat::windows::ssl_config:
   protocol: 'org.apache.coyote.http11.Http11AprProtocol'
   SSLCertificateFile: 'server.crt'
   SSLCertificateKeyFile: 'server.key'
+  #SSLCACertificateFile: 'ca.pem'
   #protocol: 'org.apache.coyote.http11.Http11NioProtocol'
   #keystoreFile: '/Users/azure/.keystore'
   #keystorePass: 'tomcat'
