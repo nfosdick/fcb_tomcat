@@ -8,7 +8,7 @@ class fcb_tomcat::windows::install
   $zip_file         = $fcb_tomcat::windows::zip_file
   $download_uri     = $fcb_tomcat::windows::download_uri
   $architecture     = $fcb_tomcat::windows::architecture
-  $download_url     = "${download_uri}/${zip_file}",
+  $download_url     = "${download_uri}/${zip_file}"
   $zip_file_path    = "${destination_path}/${zip_file}"
   $base_path        = "${install_dir}/apache-tomcat-${version}"
   $service_cmd      = "${base_path}/bin/service.bat"
